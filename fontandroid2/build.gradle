@@ -1,5 +1,41 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'font-android'
+
+    publishedGroupId = 'com.example.aliyuolalekan.fontandroid'
+    libraryName = 'FontAndroid'
+    artifact = 'fontandroid2'
+
+    libraryDescription = 'Allows you to change your application font to any of the amazing fonts on FontAndroid'
+
+    siteUrl = 'https://github.com/andela-aabdullahi/FontAndroid'
+    gitUrl = 'https://github.com/andela-aabdullahi/FontAndroid.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'andela-aabdullahi'
+    developerName = 'Aliyu Abdullahi'
+    developerEmail = 'aliyu.olalekan13@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
@@ -12,7 +48,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled minifyEnabled
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -22,4 +58,11 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
+
+
 }
+
+
+
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/bintrayv1.gradle'
