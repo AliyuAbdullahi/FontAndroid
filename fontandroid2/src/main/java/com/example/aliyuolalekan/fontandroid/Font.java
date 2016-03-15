@@ -22,10 +22,9 @@ public class Font {
   /**
    *
    * @param context
-   * @param type
+   *
    */
-  public Font(Context context, int type) {
-    this.type = type;
+  public Font(Context context) {
     this.context = context;
   }
 
